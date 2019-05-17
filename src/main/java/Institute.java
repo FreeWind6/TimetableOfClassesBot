@@ -1,18 +1,18 @@
 public class Institute {
-    private int idCabinet;
+    private String Cabinet;
     private String lesson;
     private String fullNameTeacher;
 
-    public Institute(int idCabinet, String lesson, String fullNameTeacher) {
-        this.idCabinet = idCabinet;
+    public Institute(String Cabinet, String lesson, String fullNameTeacher) {
+        this.Cabinet = Cabinet;
         this.lesson = lesson;
         this.fullNameTeacher = fullNameTeacher;
     }
 
     @Override
     public String toString() {
-        return "Номер кабинета: " + idCabinet + "\n" +
-                "Урок: " + lesson + "\n" +
-                "ФИО учителя: " + fullNameTeacher;
+        return "\u2705 " + "Номер кабинета: " + Cabinet + "\n" +
+                "\uD83D\uDCDA " + "Урок: " + lesson + "\n" +
+                "\uD83E\uDD13 " + "ФИО учителя: " + fullNameTeacher + "\n";
     }
 }

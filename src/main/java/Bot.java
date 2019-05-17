@@ -85,7 +85,7 @@ public class Bot extends TelegramLongPollingBot {
                     break;
                 case "Завтра":
                     try {
-                        sendMsg(message, "завтра");
+                        sendMsg(message, Logic.conditionPlusOne(days, dayOfWeek));
                     } catch (TelegramApiException e) {
                         e.printStackTrace();
                     }

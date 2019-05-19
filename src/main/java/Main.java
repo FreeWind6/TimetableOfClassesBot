@@ -14,7 +14,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bot extends TelegramLongPollingBot {
+public class Main extends TelegramLongPollingBot {
     public static void main(String[] args) throws TelegramApiRequestException {
 
         //Ставим прокси через порт Tor
@@ -24,7 +24,7 @@ public class Bot extends TelegramLongPollingBot {
 
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
-        telegramBotsApi.registerBot(new Bot());
+        telegramBotsApi.registerBot(new Main());
 
     }
 
@@ -76,6 +76,13 @@ public class Bot extends TelegramLongPollingBot {
         Message message = update.getMessage();
         if (message != null && message.hasText()) {
             switch (message.getText()) {
+                case "/start":
+                    try {
+                        sendMsg(message, "Добро пожаловать! Для продолжения вы можете воспользоваться кнопками бота =)");
+                    } catch (TelegramApiException e) {
+                        e.printStackTrace();
+                    }
+                    break;
                 case "Сегодня":
                     try {
                         sendMsg(message, Logic.conditionOneDay(days, dayOfWeek));
@@ -119,7 +126,7 @@ public class Bot extends TelegramLongPollingBot {
     }
 
     public String getBotToken() {
-        return "";
+        return "812043608:AAFyJMbYueG7DO1eyGngZqaTTx-18470iJQ";
     }
 }
 

@@ -11,7 +11,7 @@ public class Institute {
 
     @Override
     public String toString() {
-        return "\u2705 " + "Номер кабинета: " + Cabinet + "\n" +
+        return "\n" + "\u2705 " + "Номер кабинета: " + Cabinet + "\n" +
                 "\uD83D\uDCDA " + "Урок: " + lesson + "\n" +
                 "\uD83E\uDD13 " + "ФИО учителя: " + fullNameTeacher + "\n";
     }

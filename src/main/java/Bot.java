@@ -19,8 +19,8 @@ public class Bot extends TelegramLongPollingBot {
 
         //Ставим прокси через порт Tor
         System.getProperties().put("proxySet", "true");
-        System.getProperties().put("socksProxyHost", "localhost");
-        System.getProperties().put("socksProxyPort", "9150");
+        System.getProperties().put("socksProxyHost", "35.241.99.228");//localhost
+        System.getProperties().put("socksProxyPort", "8080");//9150
 
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
@@ -78,28 +78,28 @@ public class Bot extends TelegramLongPollingBot {
             switch (message.getText()) {
                 case "Сегодня":
                     try {
-                        sendMsg(message, Logic.condition(days, dayOfWeek));
+                        sendMsg(message, Logic.conditionOneDay(days, dayOfWeek));
                     } catch (TelegramApiException e) {
                         e.printStackTrace();
                     }
                     break;
                 case "Завтра":
                     try {
-                        sendMsg(message, Logic.conditionPlusOne(days, dayOfWeek));
+                        sendMsg(message, Logic.conditionPlusOneDay(days, dayOfWeek));
                     } catch (TelegramApiException e) {
                         e.printStackTrace();
                     }
                     break;
                 case "На этой неделе":
                     try {
-                        sendMsg(message, "на эту неделю");
+                        sendMsg(message, Logic.conditionOneWeak(days));
                     } catch (TelegramApiException e) {
                         e.printStackTrace();
                     }
                     break;
                 case "На следующей неделе":
                     try {
-                        sendMsg(message, "на следующую неделю");
+                        sendMsg(message, Logic.conditionPlusOneWeak(days));
                     } catch (TelegramApiException e) {
                         e.printStackTrace();
                     }
@@ -119,7 +119,7 @@ public class Bot extends TelegramLongPollingBot {
     }
 
     public String getBotToken() {
-        return null;
+        return "";
     }
 }
 

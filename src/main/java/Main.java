@@ -17,10 +17,10 @@ import java.util.List;
 public class Main extends TelegramLongPollingBot {
     public static void main(String[] args) throws TelegramApiRequestException {
 
-        //Ставим прокси через порт Tor
+        //Ставим прокси
         System.getProperties().put("proxySet", "true");
-        System.getProperties().put("socksProxyHost", "35.241.99.228");//localhost
-        System.getProperties().put("socksProxyPort", "8080");//9150
+        System.getProperties().put("socksProxyHost", "127.0.0.1");//localhost or 35.241.99.228
+        System.getProperties().put("socksProxyPort", "9150");//9150 or 8080
 
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();

@@ -32,6 +32,7 @@ public class Logic {
         institutes.add(new Institute("210", "Базы данных", "Чибисова"));//5
         institutes.add(new Institute("210", "Обьектно-ориентированное программирование", "Зотов"));//6
         institutes.add(new Institute("310", "Авиационные материалы", "Мамонов"));//7
+        institutes.add(new Institute("Москва", "Военная подготовка", "Рыжов"));//8
         return institutes;
     }
 
@@ -47,13 +48,13 @@ public class Logic {
                     + "-----------------------------------------------------------------"
                     + "\n" + "Четверг:" + institutes.get(1).toString() + institutes.get(1).toString() + institutes.get(5).toString() + institutes.get(5).toString()
                     + "-----------------------------------------------------------------"
-                    + "\n" + "Пятница:" + "\n" + "Не учимся!" + "\n"
+                    + "\n" + "Пятница:" + institutes.get(8).toString()
                     + "-----------------------------------------------------------------"
                     + "\n" + "Суббота:" + institutes.get(5).toString()
                     + "-----------------------------------------------------------------"
                     + "\n" + "Воскресенье:" + "\n" + "Не учимся!";
         } else {
-            string = "Понедельник:" + institutes.get(6).toString() + institutes.get(4).toString() + institutes.get(4).toString() + institutes.get(6).toString()
+            string = "Понедельник:" + institutes.get(6).toString() + institutes.get(3).toString() + institutes.get(3).toString() + institutes.get(6).toString()
                     + "-----------------------------------------------------------------"
                     + "\n" + "Вторник:" + "\n" + "Не учимся!" + "\n"
                     + "-----------------------------------------------------------------"
@@ -61,7 +62,7 @@ public class Logic {
                     + "-----------------------------------------------------------------"
                     + "\n" + "Четверг:" + institutes.get(1).toString() + institutes.get(1).toString() + institutes.get(5).toString() + institutes.get(5).toString()
                     + "-----------------------------------------------------------------"
-                    + "\n" + "Пятница:" + "\n" + "Не учимся!" + "\n"
+                    + "\n" + "Пятница:" + institutes.get(8).toString()
                     + "-----------------------------------------------------------------"
                     + "\n" + "Суббота:" + institutes.get(5).toString()
                     + "-----------------------------------------------------------------"
@@ -82,13 +83,13 @@ public class Logic {
                     + "-----------------------------------------------------------------"
                     + "\n" + "Четверг:" + institutes.get(1).toString() + institutes.get(1).toString() + institutes.get(5).toString() + institutes.get(5).toString()
                     + "-----------------------------------------------------------------"
-                    + "\n" + "Пятница:" + "\n" + "Не учимся!" + "\n"
+                    + "\n" + "Пятница:" + institutes.get(8).toString()
                     + "-----------------------------------------------------------------"
                     + "\n" + "Суббота:" + institutes.get(5).toString()
                     + "-----------------------------------------------------------------"
                     + "\n" + "Воскресенье:" + "\n" + "Не учимся!";
         } else {
-            string = "Понедельник:" + institutes.get(6).toString() + institutes.get(4).toString() + institutes.get(4).toString() + institutes.get(6).toString()
+            string = "Понедельник:" + institutes.get(6).toString() + institutes.get(3).toString() + institutes.get(3).toString() + institutes.get(6).toString()
                     + "-----------------------------------------------------------------"
                     + "\n" + "Вторник:" + "\n" + "Не учимся!" + "\n"
                     + "-----------------------------------------------------------------"
@@ -96,7 +97,7 @@ public class Logic {
                     + "-----------------------------------------------------------------"
                     + "\n" + "Четверг:" + institutes.get(1).toString() + institutes.get(1).toString() + institutes.get(5).toString() + institutes.get(5).toString()
                     + "-----------------------------------------------------------------"
-                    + "\n" + "Пятница:" + "\n" + "Не учимся!" + "\n"
+                    + "\n" + "Пятница:" + institutes.get(8).toString()
                     + "-----------------------------------------------------------------"
                     + "\n" + "Суббота:" + institutes.get(5).toString()
                     + "-----------------------------------------------------------------"
@@ -120,9 +121,12 @@ public class Logic {
                  *7 - суббота
                  */
                 case 1://воскресенье
-                case 6:
+
                 case 3:
                     string = "Не учимся";
+                    break;
+                case 6:
+                    string = institutes.get(8).toString();
                     break;
                 case 2:
                     string = institutes.get(6).toString() + institutes.get(4).toString() + institutes.get(4).toString() + institutes.get(6).toString();
@@ -143,18 +147,20 @@ public class Logic {
         } else {
             switch (dayOfWeek) {
                 case 1://воскресенье
-                case 6:
                 case 3:
                     string = "Не учимся";
                     break;
                 case 2:
-                    string = institutes.get(6).toString() + institutes.get(4).toString() + institutes.get(4).toString() + institutes.get(6).toString();
+                    string = institutes.get(6).toString() + institutes.get(3).toString() + institutes.get(3).toString() + institutes.get(6).toString();
                     break;
                 case 4://среда
                     string = institutes.get(7).toString();
                     break;
                 case 5://четверг
                     string = institutes.get(1).toString() + institutes.get(1).toString() + institutes.get(5).toString() + institutes.get(5).toString();
+                    break;
+                case 6://пятница
+                    string = institutes.get(8).toString();
                     break;
                 case 7://суббота
                     string = institutes.get(5).toString();
@@ -183,17 +189,19 @@ public class Logic {
                  */
                 case 2:
                 case 7:
-                case 5:
                     string = "Не учимся";
                     break;
                 case 1:
-                    string = institutes.get(6).toString() + institutes.get(4).toString() + institutes.get(4).toString() + institutes.get(6).toString();
+                    string = institutes.get(6).toString() + institutes.get(3).toString() + institutes.get(3).toString() + institutes.get(6).toString();
                     break;
                 case 3://среда
                     string = institutes.get(7).toString();
                     break;
                 case 4://четверг
                     string = institutes.get(1).toString() + institutes.get(1).toString() + institutes.get(5).toString() + institutes.get(5).toString();
+                    break;
+                case 5:
+                    string = institutes.get(8).toString();
                     break;
                 case 6://суббота
                     string = institutes.get(5).toString();
@@ -206,7 +214,6 @@ public class Logic {
             switch (dayOfWeek) {
                 case 2:
                 case 7:
-                case 5:
                     string = "Не учимся";
                     break;
                 case 1:
@@ -217,6 +224,9 @@ public class Logic {
                     break;
                 case 4://четверг
                     string = institutes.get(1).toString() + institutes.get(1).toString() + institutes.get(5).toString() + institutes.get(5).toString();
+                    break;
+                case 5:
+                    string = institutes.get(8).toString();
                     break;
                 case 6://суббота
                     string = institutes.get(5).toString();
